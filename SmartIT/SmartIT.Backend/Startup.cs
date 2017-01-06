@@ -6,11 +6,11 @@ using Hangfire;
 using NLog;
 using System.Configuration;
 
-[assembly: OwinStartup(typeof(SmartIT.Backend.Startup1))]
+[assembly: OwinStartup(typeof(SmartIT.Backend.Startup))]
 
 namespace SmartIT.Backend
 {
-    public class Startup1
+    public class Startup
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
