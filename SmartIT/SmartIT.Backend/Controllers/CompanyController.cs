@@ -26,19 +26,32 @@ namespace SmartIT.Backend.Controllers
         }
 
         // POST: api/Comapny
-        public void Post([FromBody]string value)
+        public Company Post(Company item)
         {
+            item = repository.Add(item);
+            return item;
         }
 
         // PUT: api/Comapny/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, Company item)
         {
+            if (!repository.Update(item))
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
         }
 
         // DELETE: api/Comapny/5
         public void Delete(int id)
         {
+            Company item = repository.Get(id);
+            if (item == null)
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+
             repository.Remove(id);
         }
+
     }
 }

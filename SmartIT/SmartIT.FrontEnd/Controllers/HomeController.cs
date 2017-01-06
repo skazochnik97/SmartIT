@@ -20,6 +20,12 @@ namespace SmartIT.Frontend.Controllers
             return View();
         }
 
+        public ActionResult Company()
+        {
+            ViewBag.Message = "List of companies";
+
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

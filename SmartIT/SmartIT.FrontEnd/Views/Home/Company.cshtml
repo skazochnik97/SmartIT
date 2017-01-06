@@ -1,0 +1,113 @@
+﻿
+@{
+    ViewBag.Title = "Company";
+}
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<h2>Company</h2>
+
+<input type="button" id="btnAddCompany" class="btn btn-small btn-primary" value="Add company" />
+<hr />
+<div class="panel panel-default pre-scrollable">
+    <table class="table table-striped table-bordered table-responsive table-condensed table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Short name</th>
+                <th>Date create</th>
+                <th>Date cancel</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach:CompanyList">
+            <tr>
+                <td>
+                    <span data-bind="text:Id"></span>
+                </td>
+                <td>
+                    <span data-bind="text:Name"></span>
+                </td>
+                <td>
+                    <span data-bind="text:ShortName"></span>
+                </td>
+                <td>
+                    <span data-bind="text:DateCreate"></span>
+                </td>
+                <td>
+                    <span data-bind="text:DateCancel"></span>
+                </td>
+                <td>
+                    <button class="btn glyphicon glyphicon-pencil" data-bind="click:$root.getSelected" />
+                </td>
+                <td>
+                    <button class="glyphicon glyphicon-trash" data-bind="click:$root.delete" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div id="modalbox" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1>Add new company</h1>
+            </div>
+            <div class="modal-body">
+                <table class="table table-condensed table-striped table-bordered">
+                    <tr>
+                        <td>Id:</td>
+                        <td>
+                            <input type="text" contenteditable="false" data-bind="value:Id" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Name:</td>
+                        <td>
+                            <input type="text" data-bind="value:Name" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Short name:</td>
+                        <td>
+                            <input type="text" data-bind="value:ShortName" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date create:</td>
+                        <td>
+                            <input type="datetime" data-bind="value:DateCreate" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Date cancel</td>
+                        <td>
+                            <input type="datetime" data-bind="value:DateCancel" class="form-control" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" data-bind="click:save">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/Scripts/knockout-3.4.0.js"></script>
+<script src="~/Scripts/SmartITScripts/CompanyList.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var modelbox = function () {
+            $("#modalbox").modal("show");
+        };
+        $("#btnAddCompany").on('click', modelbox);
+
+    });
+</script>

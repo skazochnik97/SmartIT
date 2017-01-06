@@ -46,10 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBGenericActions.cs" />
-    <Compile Include="ICompanyRepositary.cs" />
+    <Compile Include="CRUD\ICompanyRepositary.cs" />
     <Compile Include="Model\BaseObject.cs" />
     <Compile Include="Model\Company.cs" />
-    <Compile Include="CompanyRepositary.cs" />
+    <Compile Include="CRUD\CompanyRepositary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmartITDataBase.cs" />
   </ItemGroup>
