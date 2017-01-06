@@ -1,0 +1,6 @@
+2017-01-06 13:26:25.5067|INFO|SmartIT.Backend.Startup1|Initialization JobProcessor
+2017-01-06 13:26:33.2671|INFO|Hangfire.SqlServer.SqlServerStorage|Start installing Hangfire SQL objects...
+2017-01-06 13:26:33.3061|INFO|Hangfire.SqlServer.SqlServerStorage|Hangfire SQL objects installed.
+2017-01-06 13:28:19.1803|INFO|SmartIT.Backend.Startup1|Initialization JobProcessor
+2017-01-06 13:28:19.2928|INFO|Hangfire.SqlServer.SqlServerStorage|Start installing Hangfire SQL objects...
+2017-01-06 13:28:19.3328|INFO|Hangfire.SqlServer.SqlServerStorage|Hangfire SQL objects installed.

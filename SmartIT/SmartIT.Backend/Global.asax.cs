@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hangfire;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,9 @@ namespace SmartIT.Backend
     {
         protected void Application_Start()
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            System.Web.Http.GlobalConfiguration.Configure(WebApiConfig.Register);
+          
+
         }
     }
 }
