@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SmartIT.Module;
+using SmartIT.Module.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,16 +11,18 @@ namespace SmartIT.Backend.Controllers
 {
     public class CompanyController : ApiController
     {
+        static readonly ICompanyRepository repository = new CompanyRepository();
+
         // GET: api/Comapny
-        public IEnumerable<string> Get()
+        public IEnumerable<Company> Get()
         {
-            return new string[] { "value1", "value2" };
+            return repository.GetAll();
         }
 
         // GET: api/Comapny/5
-        public string Get(int id)
+        public Company Get(int id)
         {
-            return "value";
+            return repository.Get(id);
         }
 
         // POST: api/Comapny
@@ -34,6 +38,7 @@ namespace SmartIT.Backend.Controllers
         // DELETE: api/Comapny/5
         public void Delete(int id)
         {
+            repository.Remove(id);
         }
     }
 }

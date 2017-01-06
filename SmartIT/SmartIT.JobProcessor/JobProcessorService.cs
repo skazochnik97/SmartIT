@@ -45,7 +45,7 @@ namespace SmartIT.JobProcessor
                     }
 
                     logger.Info("Data import");
-                    CompanyRepository companyRep = new CompanyRepository(db);
+                    ICompanyRepository companyRep = new CompanyRepository();
                     companyRep.Import();
 
                     logger.Info("Test get companies");

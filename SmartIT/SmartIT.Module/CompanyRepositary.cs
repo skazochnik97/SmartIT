@@ -8,13 +8,12 @@ using SmartIT.Module.Model;
 
 namespace SmartIT.Module
 {
-    public class CompanyRepository: ICompanyRepositary
+    public class CompanyRepository: ICompanyRepository
     {
-        private List<Company> products = new List<Company>();
-        private SmartITDataBase db;
-        public CompanyRepository(SmartITDataBase database)
+      
+        public CompanyRepository()
         {
-            db = database;
+            
         }
 
         public void Import()
@@ -27,16 +26,22 @@ namespace SmartIT.Module
 
         public IEnumerable<Company> GetAll()
         {
+            using (var db = new SmartITDataBase())
+            {
                 return db.Company;
+            }
         }
 
         public Company Get(int id)
         {
+            using (var db = new SmartITDataBase())
+            {
                 var query = from company in db.Company
                             where company.Id == id
                             orderby company.Name descending
                             select company;
                 return query.First<Company>();
+            }
         }
 
 
@@ -46,7 +51,8 @@ namespace SmartIT.Module
             {
                 throw new ArgumentNullException("item");
             }
-
+            using (var db = new SmartITDataBase())
+            {
                 var query = from company in db.Company
                             where company.Name == item.Name
                             select company;
@@ -54,14 +60,17 @@ namespace SmartIT.Module
                 if (query.Count() == 0)
                     db.Insert(item);
                 return item;
+            }
         }
 
         public void Remove(int id)
         {
-
+            using (var db = new SmartITDataBase())
+            {
                 db.Company
                     .Where(p => p.Id == id)
                     .Delete();
+            }
         }
 
         public bool Update(Company item)
@@ -71,7 +80,8 @@ namespace SmartIT.Module
             {
                 throw new ArgumentNullException("item");
             }
-
+            using (var db = new SmartITDataBase())
+            {
                 db.Company
                       .Where(p => p.Id == item.Id)
                       .Set(p => p.Name, item.Name)
@@ -79,7 +89,9 @@ namespace SmartIT.Module
                        .Set(p => p.DateCreate, item.DateCreate)
                            .Set(p => p.ShortName, item.ShortName)
                       .Update();
-            return true;
+                return true;
+            }
+            
         }
     }
 

@@ -36,7 +36,7 @@ namespace SmartIT.Backend
 
             var client = new BackgroundJobClient();
 
-            client.Enqueue(() => Console.WriteLine("Easy!"));
+            client.Enqueue(() => Console.WriteLine($"Starting backend - webapi {DateTime.Now.ToString()}!"));
             // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
         }
     }
