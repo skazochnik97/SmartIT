@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{08FBBCF1-7DF7-4968-AD82-C8E8AA12F594}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{B2196FC9-FE97-4461-800E-4C98FF580C31}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartIT.Powershell</RootNamespace>
-    <AssemblyName>SmartIT.Powershell</AssemblyName>
+    <RootNamespace>SmartIT.ConsoleTest</RootNamespace>
+    <AssemblyName>SmartIT.ConsoleTest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,10 +39,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Management.Automation.dll.10.0.10586.0\lib\net40\System.Management.Automation.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
@@ -52,19 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cmdlets\GetSITCompanyCmdlet.cs" />
-    <Compile Include="PowerShellAbstractionLayer\CmdletBase.cs" />
-    <Compile Include="PowerShellAbstractionLayer\ConnectionCmdlet.cs" />
-    <Compile Include="PowerShellAbstractionLayer\GetCmdletBase.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SmartIT.Module\SmartIT.Module.csproj">
-      <Project>{689048df-c674-446b-a70e-58c075e2c6ca}</Project>
+      <Project>{689048DF-C674-446B-A70E-58C075E2C6CA}</Project>
       <Name>SmartIT.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartIT.Powershell\SmartIT.Powershell.csproj">
+      <Project>{08fbbcf1-7df7-4968-ad82-c8e8aa12f594}</Project>
+      <Name>SmartIT.Powershell</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

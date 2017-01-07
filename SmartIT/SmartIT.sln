@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartIT.JobProcessor", "Sma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartIT.Frontend", "SmartIT.FrontEnd\SmartIT.Frontend.csproj", "{046A8EED-7D57-4692-914C-243AD13D592F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartIT.ConsoleTest", "SmartIT.ConsoleTest\SmartIT.ConsoleTest.csproj", "{B2196FC9-FE97-4461-800E-4C98FF580C31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{046A8EED-7D57-4692-914C-243AD13D592F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{046A8EED-7D57-4692-914C-243AD13D592F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{046A8EED-7D57-4692-914C-243AD13D592F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2196FC9-FE97-4461-800E-4C98FF580C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2196FC9-FE97-4461-800E-4C98FF580C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2196FC9-FE97-4461-800E-4C98FF580C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2196FC9-FE97-4461-800E-4C98FF580C31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

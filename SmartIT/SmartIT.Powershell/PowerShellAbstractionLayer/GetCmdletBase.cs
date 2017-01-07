@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Management.Automation;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace SmartIT.Module.PowerShellAbstractionLayer
 {
@@ -21,11 +23,14 @@ namespace SmartIT.Module.PowerShellAbstractionLayer
         [Alias("Oid")]
         public Guid? ID;
 
+        
+
         public GetCmdletBase()
           : base()
         {
         }
 
+      
         /// <summary>
         /// Получение списка базового объекта
         /// </summary>
@@ -35,24 +40,25 @@ namespace SmartIT.Module.PowerShellAbstractionLayer
         {
             List<T> businessObjectList =new List<T>() ;
 
-         /*  UnitOfWork uow = new UnitOfWork(this.serverConnection.Client);
-            XPCollection<T> collBaseBusinessObject;
+          
+            /*  UnitOfWork uow = new UnitOfWork(this.serverConnection.Client);
+               XPCollection<T> collBaseBusinessObject;
 
-                if (this.ID.HasValue)
-                {
-                // получаем объекты по указанному ID
-                // передаём в обработку <тип результат> соединение с сервером, идентификатор
-                collBaseBusinessObject = new XPCollection<T>(uow, CriteriaOperator.Parse("Oid=?", this.ID));
-                    if (collBaseBusinessObject.Count > 0)
-                        businessObjectList = collBaseBusinessObject.ToList<T>();
-                }
-                else
-                {
-                // получаем все объекты
-                collBaseBusinessObject = new XPCollection<T>(uow);
-                          if (collBaseBusinessObject.Count > 0)
-                            businessObjectList = collBaseBusinessObject.ToList<T>();
-                }*/
+                   if (this.ID.HasValue)
+                   {
+                   // получаем объекты по указанному ID
+                   // передаём в обработку <тип результат> соединение с сервером, идентификатор
+                   collBaseBusinessObject = new XPCollection<T>(uow, CriteriaOperator.Parse("Oid=?", this.ID));
+                       if (collBaseBusinessObject.Count > 0)
+                           businessObjectList = collBaseBusinessObject.ToList<T>();
+                   }
+                   else
+                   {
+                   // получаем все объекты
+                   collBaseBusinessObject = new XPCollection<T>(uow);
+                             if (collBaseBusinessObject.Count > 0)
+                               businessObjectList = collBaseBusinessObject.ToList<T>();
+                   }*/
             return businessObjectList;
         }
 
