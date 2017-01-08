@@ -64,3 +64,33 @@
 2017-01-07 13:02:58.1560|INFO|SmartIT.Backend.Startup|Initialization JobProcessor
 2017-01-07 13:02:58.2675|INFO|Hangfire.SqlServer.SqlServerStorage|Start installing Hangfire SQL objects...
 2017-01-07 13:02:58.3375|INFO|Hangfire.SqlServer.SqlServerStorage|Hangfire SQL objects installed.
+2017-01-08 10:55:52.6096|INFO|SmartIT.Backend.Startup|Initialization JobProcessor
+2017-01-08 10:56:05.5095|ERROR|SmartIT.Backend.Startup|System.Data.SqlClient.SqlException (0x80131904): Cannot open database "SmartITLab01" requested by the login. The login failed.
+Login failed for user 'AONLMK\kuznetsov_pa'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreateNonPooledConnection(DbConnection owningConnection, DbConnectionPoolGroup poolGroup, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Hangfire.SqlServer.SqlServerStorage.CreateAndOpenConnection()
+   at Hangfire.SqlServer.SqlServerStorage..ctor(String nameOrConnectionString, SqlServerStorageOptions options)
+   at Hangfire.SqlServerStorageExtensions.UseSqlServerStorage(IGlobalConfiguration configuration, String nameOrConnectionString)
+   at SmartIT.Backend.Startup.Configuration(IAppBuilder app) in C:\Users\kuznetsov_pa\Source\Repos\SmartIT\SmartIT\SmartIT.Backend\Startup.cs:line 29
+ClientConnectionId:3b4e5802-3861-4708-b4be-a23b1357fe6f
+Error Number:4060,State:1,Class:11
+2017-01-08 11:00:35.3037|INFO|SmartIT.Backend.Startup|Initialization JobProcessor
+2017-01-08 11:00:35.5664|INFO|Hangfire.SqlServer.SqlServerStorage|Start installing Hangfire SQL objects...
+2017-01-08 11:00:36.3143|INFO|Hangfire.SqlServer.SqlServerStorage|Hangfire SQL objects installed.
+2017-01-08 11:01:52.0115|INFO|SmartIT.Backend.Startup|Initialization JobProcessor
+2017-01-08 11:01:52.2542|INFO|Hangfire.SqlServer.SqlServerStorage|Start installing Hangfire SQL objects...
+2017-01-08 11:01:52.3248|INFO|Hangfire.SqlServer.SqlServerStorage|Hangfire SQL objects installed.
+2017-01-08 11:05:25.8800|INFO|SmartIT.Backend.Startup|Initialization JobProcessor
+2017-01-08 11:05:26.0737|INFO|Hangfire.SqlServer.SqlServerStorage|Start installing Hangfire SQL objects...
+2017-01-08 11:05:26.1711|INFO|Hangfire.SqlServer.SqlServerStorage|Hangfire SQL objects installed.
+2017-01-08 11:07:28.9688|INFO|SmartIT.Backend.Startup|Initialization JobProcessor
+2017-01-08 11:07:29.2755|INFO|Hangfire.SqlServer.SqlServerStorage|Start installing Hangfire SQL objects...
+2017-01-08 11:07:29.3815|INFO|Hangfire.SqlServer.SqlServerStorage|Hangfire SQL objects installed.
