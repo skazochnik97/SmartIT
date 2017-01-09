@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cmdlets\GetSITCompanyCmdlet.cs" />
+    <Compile Include="Cmdlets\NewSITCompanyCmdlet.cs" />
+    <Compile Include="Cmdlets\RemoveSITCompanyCmdlet.cs" />
+    <Compile Include="Cmdlets\SetSITAccountTypeCmdlet.cs" />
     <Compile Include="PowerShellAbstractionLayer\CmdletBase.cs" />
     <Compile Include="PowerShellAbstractionLayer\ConnectionCmdlet.cs" />
     <Compile Include="PowerShellAbstractionLayer\GetCmdletBase.cs" />

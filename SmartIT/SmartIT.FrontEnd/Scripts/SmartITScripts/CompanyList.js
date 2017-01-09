@@ -57,7 +57,22 @@
                     type: "POST",
                     data: CompanyInfo,
                     datatype: "json",
-                    contenttype: "application/json;utf-8"
+                    contenttype: "application/json;utf-8",
+                    error: function (jxqr, error, status) {
+                        // парсинг json-объекта
+                        var response = jQuery.parseJSON(jxqr.responseText);
+                      
+                      //  $('#modalbox').append("<h2>" + response['Message'] + "</h2>");
+                        // добавляем ошибки свойства Year
+                        if (response['ModelState']){
+ 
+                            $.each(response['ModelState'], function (index, item) {
+                                alert(item);
+                            });
+                        }
+                   
+                    }
+
                 }).done(function (resp) {
                     self.Id(resp.Id);
                     $("#modalbox").modal("hide");

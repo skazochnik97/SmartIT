@@ -7,6 +7,7 @@ namespace SmartIT.Module.Model
     [Table(Name = "Company")]
     public class Company : BaseObject
     {
+
         [Column(Name = "ShortName")]
         public string ShortName { get; set; }
 
