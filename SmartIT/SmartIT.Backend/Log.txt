@@ -94,3 +94,6 @@ Error Number:4060,State:1,Class:11
 2017-01-08 11:07:28.9688|INFO|SmartIT.Backend.Startup|Initialization JobProcessor
 2017-01-08 11:07:29.2755|INFO|Hangfire.SqlServer.SqlServerStorage|Start installing Hangfire SQL objects...
 2017-01-08 11:07:29.3815|INFO|Hangfire.SqlServer.SqlServerStorage|Hangfire SQL objects installed.
+2017-01-08 12:38:28.4503|INFO|SmartIT.Backend.Startup|Initialization JobProcessor
+2017-01-08 12:38:29.3509|INFO|Hangfire.SqlServer.SqlServerStorage|Start installing Hangfire SQL objects...
+2017-01-08 12:38:32.0475|INFO|Hangfire.SqlServer.SqlServerStorage|Hangfire SQL objects installed.
