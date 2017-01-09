@@ -5,6 +5,8 @@ using Owin;
 using Hangfire;
 using NLog;
 using System.Configuration;
+using Hangfire.Storage;
+using Hangfire.Storage.Monitoring;
 
 [assembly: OwinStartup(typeof(SmartIT.Backend.Startup))]
 
@@ -35,7 +37,7 @@ namespace SmartIT.Backend
             app.UseHangfireDashboard();
 
             var client = new BackgroundJobClient();
-
+     
             client.Enqueue(() => Console.WriteLine($"Starting backend - webapi {DateTime.Now.ToString()}!"));
             // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=316888
         }
