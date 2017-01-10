@@ -13,8 +13,6 @@ namespace SmartIT.Backend
         protected void Application_Start()
         {
             System.Web.Http.GlobalConfiguration.Configure(WebApiConfig.Register);
-          
-
         }
     }
 }
